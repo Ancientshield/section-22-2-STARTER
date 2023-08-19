@@ -3,7 +3,7 @@
 		type="email"
 		class="form-control"
 		placeholder="E-mail"
-		:value="modelValue"
+		:value="email"
 		@input="update($event)"
 		:class="{
 			'is-valid': validateEmail(email),
@@ -19,7 +19,7 @@
 		name: 'EmailInput',
 		props: ['email'],
 		methods: {
-			update() {
+			update($event) {
 				this.$emit('update:email', $event.target.value);
 			},
 			validateEmail,
